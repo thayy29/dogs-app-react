@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Input from '../Form/Input';
-import Button from '../Form/Button';
-import useForm from '../../Hooks/useForm';
-import { UserContext } from '../../UserContext';
-import Error from '../Helper/Error';
-import styles from '../Login/LoginForm.module.css';
-import stylesBtn from '../Form/Button.module.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import Input from "../Form/Input";
+import Button from "../Form/Button";
+import useForm from "../../Hooks/useForm";
+import { UserContext } from "../../UserContext";
+import Error from "../Helper/Error";
+import styles from "../Login/LoginForm.module.css";
+import stylesBtn from "../Form/Button.module.css";
 
 const LoginForm = () => {
   const username = useForm();
@@ -36,6 +36,7 @@ const LoginForm = () => {
         )}
         <Error error={error} />
       </form>
+
       <Link className={styles.perdeu} to="/login/perdeu">
         Perdeu a senha?
       </Link>
