@@ -1,0 +1,10 @@
+.footer {
+  height: 10rem;
+  background: #fb1;
+  padding: 3rem 1rem 0 1rem;
+  text-align: center;
+}
+
+.footer p {
+  margin-top: 1rem;
+}
