@@ -1,24 +1,24 @@
-import React from "react";
-import Input from "../Form/Input";
-import Button from "../Form/Button";
-import useForm from "../../Hooks/useForm";
-import useFetch from "../../Hooks/useFetch";
-import { useNavigate } from "react-router";
-import { PASSWORD_RESET } from "../../api";
-import Error from "../Helper/Error";
-import Head from "../Helper/Head";
+import React from 'react';
+import Input from '../Form/Input';
+import Button from '../Form/Button';
+import useForm from '../../Hooks/useForm';
+import useFetch from '../../Hooks/useFetch';
+import { useNavigate } from 'react-router';
+import { PASSWORD_RESET } from '../../api';
+import Error from '../Helper/Error';
+import Head from '../Helper/Head';
 
 const LoginPasswordReset = () => {
-  const [login, setLogin] = React.useState("");
-  const [key, setKey] = React.useState("");
+  const [login, setLogin] = React.useState('');
+  const [key, setKey] = React.useState('');
   const password = useForm();
   const { error, loading, request } = useFetch();
   const navigate = useNavigate();
 
   React.useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const key = params.get("key");
-    const login = params.get("login");
+    const key = params.get('key');
+    const login = params.get('login');
 
     if (key) setKey(key);
     if (login) setLogin(login);
@@ -34,16 +34,14 @@ const LoginPasswordReset = () => {
       });
 
       const { response } = await request(url, options);
-      if (response.ok) navigate("/login");
+      if (response.ok) navigate('/login');
     }
   }
 
   return (
-    <div>
+    <section className="animeLeft">
       <Head title="Resete a Senha" />
-
       <h1 className="title">Resete a Senha</h1>
-
       <form onSubmit={handleSubmit}>
         <Input
           label="Nova Senha"
@@ -58,7 +56,7 @@ const LoginPasswordReset = () => {
         )}
       </form>
       <Error error={error} />
-    </div>
+    </section>
   );
 };
 
